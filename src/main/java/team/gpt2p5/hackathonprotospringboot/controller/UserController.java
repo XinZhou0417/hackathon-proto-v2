@@ -31,14 +31,14 @@ public class UserController {
 
     }
 
-    @GetMapping
-    public User getUser() {
-        logger.info("entered getUser method");
-        User user = new User("090", "neo", "neo@matrix.com");
-        return user;
-//        String body = new ObjectMapper().writeValueAsString(user);
-//        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
-//        return response;
-    }
+//    @GetMapping
+//    public User getUser() {
+//        logger.info("entered getUser method");
+//        User user = new User("090", "neo", "neo@matrix.com");
+//        return user;
+////        String body = new ObjectMapper().writeValueAsString(user);
+////        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
+////        return response;
+//    }
 
 }
