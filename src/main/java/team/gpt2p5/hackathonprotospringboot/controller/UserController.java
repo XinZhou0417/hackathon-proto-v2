@@ -15,7 +15,6 @@ import team.gpt2p5.hackathonprotospringboot.rest.HttpStatusCode;
 @RequestMapping("/user")
 public class UserController {
 
-
     @GetMapping("/user/{userId}")
     public AwsProxyResponse getUserByID(@PathVariable String userId) throws JsonProcessingException {
         User user = new User(userId, "neo", "neo@matrix.com");
@@ -23,7 +22,5 @@ public class UserController {
         AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
         return response;
     }
-
-
 
 }
