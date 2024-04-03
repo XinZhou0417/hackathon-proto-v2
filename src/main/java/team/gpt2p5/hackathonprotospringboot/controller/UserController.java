@@ -20,8 +20,8 @@ public class UserController {
     static final Logger logger = LogManager.getLogger(UserController.class);
 
     @GetMapping("/{userId}")
-    public User getUserByID(@PathVariable String userId) {
-        logger.info("entered getUserByID method");
+    public User getUserByID(@PathVariable("userId") String userId) {
+        logger.info("entered getUserByID method, userId = " + userId);
         User user = new User(userId, "neo", "neo@matrix.com");
         return user;
 //        String body = new ObjectMapper().writeValueAsString(user);
