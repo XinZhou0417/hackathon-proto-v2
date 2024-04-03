@@ -19,6 +19,7 @@ Resources:
   HackathonPrototypeFunction:
     Type: AWS::Serverless::Function
     Properties:
+      Policies: AWSLambda_FullAccess
       CodeUri: target/hackathon-proto-springboot-0.0.1-SNAPSHOT-lambda.jar
       Handler: team.gpt2p5.hackathonprotospringboot.LambdaHandler::handleRequest
       Events:
