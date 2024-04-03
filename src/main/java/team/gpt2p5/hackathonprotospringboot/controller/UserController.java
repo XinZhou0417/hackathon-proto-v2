@@ -28,4 +28,9 @@ public class UserController {
         return response;
     }
 
+    @GetMapping
+    public String getString() {
+        return "hello";
+    }
+
 }
