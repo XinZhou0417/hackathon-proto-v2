@@ -98,7 +98,13 @@
                 <version>3.5.1</version>
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <transformers>
+                        <transformer
+                                implementation="com.github.edwgiz.mavenShadePlugin.log4j2CacheTransformer.PluginsCacheFileTransformer">
+                        </transformer>
+                    </transformers>
                 </configuration>
+
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -111,11 +117,7 @@
                                     <exclude>org.apache.tomcat.embed:*</exclude>
                                 </excludes>
                             </artifactSet>
-                            <transformers>
-                                <transformer
-                                        implementation="com.github.edwgiz.mavenShadePlugin.log4j2CacheTransformer.PluginsCacheFileTransformer">
-                                </transformer>
-                            </transformers>
+
                         </configuration>
                     </execution>
                 </executions>
