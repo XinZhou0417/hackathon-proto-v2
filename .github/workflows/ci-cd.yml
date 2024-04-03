@@ -22,4 +22,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-4
       - name: Update Lambda Function
-        run: aws lambda update-function-code --function-name pecare --zip-file fileb://target/hackathon-proto-springboot-0.0.1-SNAPSHOT-lambda.jar
+        run: aws lambda update-function-code --function-name sam-app-HackathonPrototypeFunction-7AiGjHylPK8J --zip-file fileb://target/hackathon-proto-springboot-0.0.1-SNAPSHOT-lambda.jar

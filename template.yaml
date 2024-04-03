@@ -11,10 +11,11 @@ Globals:
 
 
 Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: pecare
+#  MyApi:
+#    Type: AWS::ApiGateway::RestApi
+#    Properties:
+#      Name: PetCare API
+
 
   HackathonPrototypeFunction:
     Type: AWS::Serverless::Function
@@ -29,9 +30,9 @@ Resources:
             Path: /{proxy+}
             Method: any
 
-Outputs:
-  HackathonPrototypeAPI:
-    Description: URL for application
-    Value: !Sub 'https://${ServerlessHttpApi}.execute-api.ap-southeast-4.amazonaws.com/pecare'
-    Export:
-      Name: HackathonPrototypeAPI
+#Outputs:
+#  HackathonPrototypeAPI:
+#    Description: URL for application
+#    Value: !Sub 'https://${ServerlessHttpApi}.execute-api.ap-southeast-4.amazonaws.com/petcare'
+#    Export:
+#      Name: HackathonPrototypeAPI

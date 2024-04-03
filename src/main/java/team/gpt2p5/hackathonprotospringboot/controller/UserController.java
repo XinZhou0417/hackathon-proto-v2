@@ -1,7 +1,6 @@
 package team.gpt2p5.hackathonprotospringboot.controller;
 
 
-import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
@@ -28,24 +27,17 @@ public class UserController {
         logger.info("entered getUserByID method, userId = " + userId);
         User user = new User(userId, "neo", "neo@matrix.com");
         return new ObjectMapper().writeValueAsString(user);
-//        String body = new ObjectMapper().writeValueAsString(user);
-//        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
-//        return response;
-
     }
 
-    @GetMapping
-    public List<User> getUser() {
+    @GetMapping("/getAll")
+    public String getUser() throws JsonProcessingException {
         logger.info("entered getUser method");
         List<User> users = new ArrayList<>();
         users.add(new User("001", "apoch", "123@matrix.com"));
         users.add(new User("002", "switch", "13233@matrix.com"));
         users.add(new User("003", "trinity", "1sdf3@matrix.com"));
         users.add(new User("004", "neo", "neo@matrix.com"));
-        return users;
-//        String body = new ObjectMapper().writeValueAsString(user);
-//        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
-//        return response;
+        return new ObjectMapper().writeValueAsString(users);
     }
 
 }
