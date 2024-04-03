@@ -29,8 +29,8 @@ public class UserController {
     }
 
     @GetMapping
-    public String getString() {
-        return "hello";
+    public User getUser() {
+        return new User("090", "ted", "213@g34.com");
     }
 
 }
