@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import team.gpt2p5.hackathonprotospringboot.model.User;
-import team.gpt2p5.hackathonprotospringboot.rest.HttpStatusCode;
 
 @RestController
+@EnableWebMvc
 @RequestMapping("/user")
 public class UserController {
 
     static final Logger logger = LogManager.getLogger(UserController.class);
 
     @GetMapping("/{userId}")
-    public User getUserByID(@PathVariable("userId") String userId) {
+    public String getUserByID(@PathVariable("userId") String userId) throws JsonProcessingException {
         logger.info("entered getUserByID method, userId = " + userId);
         User user = new User(userId, "neo", "neo@matrix.com");
-        return user;
+        return new ObjectMapper().writeValueAsString(user);
 //        String body = new ObjectMapper().writeValueAsString(user);
 //        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
 //        return response;
