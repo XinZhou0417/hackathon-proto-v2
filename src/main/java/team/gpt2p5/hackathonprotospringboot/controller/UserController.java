@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import team.gpt2p5.hackathonprotospringboot.model.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @EnableWebMvc
 @RequestMapping("/user")
@@ -31,14 +34,18 @@ public class UserController {
 
     }
 
-//    @GetMapping
-//    public User getUser() {
-//        logger.info("entered getUser method");
-//        User user = new User("090", "neo", "neo@matrix.com");
-//        return user;
-////        String body = new ObjectMapper().writeValueAsString(user);
-////        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
-////        return response;
-//    }
+    @GetMapping
+    public List<User> getUser() {
+        logger.info("entered getUser method");
+        List<User> users = new ArrayList<>();
+        users.add(new User("001", "apoch", "123@matrix.com"));
+        users.add(new User("002", "switch", "13233@matrix.com"));
+        users.add(new User("003", "trinity", "1sdf3@matrix.com"));
+        users.add(new User("004", "neo", "neo@matrix.com"));
+        return users;
+//        String body = new ObjectMapper().writeValueAsString(user);
+//        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
+//        return response;
+    }
 
 }
