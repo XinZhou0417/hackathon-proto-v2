@@ -12,7 +12,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: team.gpt2p5.hackathonprotospringboot.LambdaHandler::handleRequest
-      Runtime: java11
+      Runtime: java17
       CodeUri: .
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
