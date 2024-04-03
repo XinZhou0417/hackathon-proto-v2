@@ -29,8 +29,12 @@ public class UserController {
     }
 
     @GetMapping
-    public User getUser() {
-        return new User("090", "ted", "213@g34.com");
+    public AwsProxyResponse getUser() throws JsonProcessingException {
+        logger.info("entered getUserByID method");
+        User user = new User("090", "neo", "neo@matrix.com");
+        String body = new ObjectMapper().writeValueAsString(user);
+        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
+        return response;
     }
 
 }
