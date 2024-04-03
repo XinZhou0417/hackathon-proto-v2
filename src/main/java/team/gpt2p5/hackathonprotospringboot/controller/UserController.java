@@ -20,21 +20,24 @@ public class UserController {
     static final Logger logger = LogManager.getLogger(UserController.class);
 
     @GetMapping("/{userId}")
-    public AwsProxyResponse getUserByID(@PathVariable String userId) throws JsonProcessingException {
+    public User getUserByID(@PathVariable String userId) {
         logger.info("entered getUserByID method");
         User user = new User(userId, "neo", "neo@matrix.com");
-        String body = new ObjectMapper().writeValueAsString(user);
-        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
-        return response;
+        return user;
+//        String body = new ObjectMapper().writeValueAsString(user);
+//        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
+//        return response;
+
     }
 
     @GetMapping
-    public AwsProxyResponse getUser() throws JsonProcessingException {
-        logger.info("entered getUserByID method");
+    public User getUser() {
+        logger.info("entered getUser method");
         User user = new User("090", "neo", "neo@matrix.com");
-        String body = new ObjectMapper().writeValueAsString(user);
-        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
-        return response;
+        return user;
+//        String body = new ObjectMapper().writeValueAsString(user);
+//        AwsProxyResponse response = new AwsProxyResponse(HttpStatusCode.SUCCESS, null, body);
+//        return response;
     }
 
 }
