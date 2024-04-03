@@ -111,6 +111,11 @@
                                     <exclude>org.apache.tomcat.embed:*</exclude>
                                 </excludes>
                             </artifactSet>
+                            <transformers>
+                                <transformer
+                                        implementation="com.github.edwgiz.mavenShadePlugin.log4j2CacheTransformer.PluginsCacheFileTransformer">
+                                </transformer>
+                            </transformers>
                         </configuration>
                     </execution>
                 </executions>
